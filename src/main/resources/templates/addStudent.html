@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Add Student</title>
+
+    <style>
+        body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f0f4f8;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+}
+
+
+form {
+    background-color: #ffffff;
+    padding: 30px 40px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 400px;
+}
+
+
+
+label {
+    display: block;
+    margin-bottom: 6px;
+    font-weight: bold;
+    color: #333;
+}
+
+
+input[type="text"],
+input[type="number"] {
+    width: 100%;
+    padding: 10px 12px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 15px;
+    box-sizing: border-box;
+}
+
+
+input[type="submit"] {
+    width: 100%;
+    padding: 12px;
+    background-color: #2d6cdf;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+input[type="submit"]:hover {
+    background-color: #1c4db8;
+}
+
+    </style>
+</head>
+<body>
+
+
+
+<form action="/added" method="post">
+    <label for="rollNo">Student Roll No:</label><br>
+    <input type="number" name="rollNo" id="rollNo" required><br><br>
+
+    <label for="name">Student Name:</label><br>
+    <input type="text" name="name" id="name" required><br><br>
+
+    <label for="standard">Student Standard:</label><br>
+    <input type="text" name="standard" id="standard" required><br><br>
+
+    <label for="marks">Student Marks:</label><br>
+    <input type="number" name="marks" id="marks" required><br><br>
+
+    <input type="submit" value="Add Student">
+</form>
+
+</body>
+</html>
