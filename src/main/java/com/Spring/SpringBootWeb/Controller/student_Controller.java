@@ -29,6 +29,27 @@ public class student_Controller {
     @RequestMapping("/")
     public String home()
     {
+        return "login";
+    }
+
+    @RequestMapping("/home")
+    public String Login(@RequestParam String user,String pass,Model model)
+    {
+        if(user.equals("admin") && pass.equals("admin"))
+        {
+            return "index";
+        }
+        else
+        {
+            String str2="Wrong userid or or password";
+            model.addAttribute("error",str2);
+            return "login";
+        }
+    }
+
+    @RequestMapping("/homee")
+    public String homee()
+    {
         return "index";
     }
 
@@ -44,7 +65,7 @@ public class student_Controller {
         if(repo1.existsById(s1.getRollNo()))
         {
             model.addAttribute("message","Roll number already exists");
-            return "error";
+            return "invalid";
         }
         else {
             repo1.addStudent(s1.getRollNo(),s1.getName(),s1.getStandard(),s1.getMarks());
