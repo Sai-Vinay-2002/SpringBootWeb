@@ -63,8 +63,8 @@
 <body>
 <form action="/home" method="get">
     <h2>Login</h2>
-    <input type="text" name="user" placeholder="Username"><br>
-    <input type="text" name="pass" placeholder="Password"><br>
+    <input type="text" name="user" placeholder="Username" autocomplete="off"><br>
+    <input type="text" name="pass" placeholder="Password" autocomplete="off"><br>
     <input type="submit" value="Login">
     <div class="error-message">
         <p th:text="${error}"></p>
