@@ -37,6 +37,15 @@
             box-sizing: border-box;
         }
 
+         input[type="password"] {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+
         input[type="submit"] {
             width: 100%;
             padding: 10px;
@@ -61,10 +70,10 @@
     </style>
 </head>
 <body>
-<form action="/home" method="get">
+<form action="/login" method="post">
     <h2>Login</h2>
-    <input type="text" name="user" placeholder="Username" autocomplete="off"><br>
-    <input type="text" name="pass" placeholder="Password" autocomplete="off"><br>
+    <input type="text" name="username" placeholder="Username" autocomplete="off">
+    <input type="password" name="password" placeholder="Password" autocomplete="off">
     <input type="submit" value="Login">
     <div class="error-message">
         <p th:text="${error}"></p>

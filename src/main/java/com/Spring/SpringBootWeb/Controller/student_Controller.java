@@ -26,26 +26,22 @@ public class student_Controller {
     @Autowired
     private CsvGenerator csvGenerator;
 
+
     @RequestMapping("/")
     public String home()
     {
+        return "index";
+    }
+
+    @GetMapping("/login")
+    public String login(@RequestParam(value = "error", required = false) String error,
+                        Model model) {
+        if (error != null) {
+            model.addAttribute("error", "Invalid username or password!");
+        }
         return "login";
     }
 
-    @RequestMapping("/home")
-    public String Login(@RequestParam String user,String pass,Model model)
-    {
-        if(user.equals("admin") && pass.equals("admin"))
-        {
-            return "index";
-        }
-        else
-        {
-            String str2="Wrong userid or or password";
-            model.addAttribute("error",str2);
-            return "login";
-        }
-    }
 
     @RequestMapping("/homee")
     public String homee()
@@ -121,6 +117,14 @@ public class student_Controller {
         Student s1=repo1.getByRollNo(id);
         model.addAttribute("Std",s1);
         return "updateStudent";
+    }
+
+    @PostMapping("/updateResult")
+    public String updateResult(Model model,Student s1)
+    {
+        repo1.save(s1);
+        model.addAttribute("s1",s1);
+        return "updateResult";
     }
 
     @RequestMapping("/download")
